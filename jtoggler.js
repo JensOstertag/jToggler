@@ -131,7 +131,7 @@
                         });
                         var $btn = $('<input />', {
                             type: 'radio',
-                            name: 'options',
+                            name: $element.attr('name'),
                             class: 'jtoggler-radio',
                         });
 
