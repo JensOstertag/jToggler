@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://sinneren.github.io/jToggler/jtoggler.styles.css">
-    <title>Document</title>
-</head>
-<body>
-    <div>Two State</div>
-    <input type="checkbox" class="jtoggler">
-    <input type="checkbox" checked class="jtoggler">
-    <input type="checkbox" disabled class="jtoggler">
-    <input type="checkbox" checked disabled class="jtoggler">
-    <input type="checkbox" class="jtoggler" data-jtlabel="Toggler Off" data-jtlabel-success="Toggler On">
-    <div>Three State</div>
-    <input type="checkbox" class="jtoggler" data-jtmulti-state>
-    <input type="checkbox" class="jtoggler" disabled data-jtmulti-state>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://sinneren.github.io/jToggler/jtoggler.js"></script>
-    <script>
-        $(document).ready(() => {
-            $('.jtoggler').jtoggler();
-            $(document).on('jt:toggled', function(event, target) {
-                // console.log(event, target);
-                // console.info($(target).prop('checked'))
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./jtoggler.styles.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div>Two State</div>
+        <input type="checkbox" class="jtoggler">
+        <input type="checkbox" checked class="jtoggler">
+        <input type="checkbox" disabled class="jtoggler">
+        <input type="checkbox" checked disabled class="jtoggler">
+        <input type="checkbox" class="jtoggler" data-jtlabel="Toggler Off" data-jtlabel-success="Toggler On">
+
+        <div>Three State</div>
+        <input type="checkbox" class="jtoggler" data-jtmulti-state>
+        <input type="checkbox" class="jtoggler" disabled data-jtmulti-state>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script src="./jtoggler.js"></script>
+        <script>
+            $(document).ready(() => {
+                $('.jtoggler').jtoggler();
+                $(document).on('jt:toggled', function(event, target) {
+                    console.log(event, target);
+                    console.info($(target).prop('checked'))
+                });
+                $(document).on('jt:toggled:multi', function (event, target) {
+                    console.log(event, target);
+                    console.info($(target).val())
+                });
             });
-            $(document).on('jt:toggled:multi', function (event, target) {
-                console.log(event, target);
-                console.info($(target).parent().index())
-            });
-        });
-    </script>
-    <style>
-        html, body {
-            margin: 0;
-        }
-        *, *:after, *:before {
-            box-sizing: border-box;
-        }
-    </style>
-</body>
+        </script>
+
+        <style>
+            html, body {
+                margin: 0;
+            }
+            *, *:after, *:before {
+                box-sizing: border-box;
+            }
+        </style>
+    </body>
 </html>

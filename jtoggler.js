@@ -5,6 +5,7 @@
         var pluginName = "jtoggler",
             defaults = {
                 className: "",
+                threeStateValues: [ '1', '', '0' ]
             };
 
         function Toggler ( element, options ) {
@@ -133,6 +134,7 @@
                             type: 'radio',
                             name: $element.attr('name'),
                             class: 'jtoggler-radio',
+                            value: this.settings.threeStateValues[i]
                         });
 
                         $label.append($btn);
